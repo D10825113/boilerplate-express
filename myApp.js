@@ -3,6 +3,15 @@ let app = express();
 
 
 
+app.get('/', (req, res) => {
+  res.sendFile(absolutePath = __dirname + '/views/index.html');
+});
+
+app.use('/public', express.static(__dirname + '/public'));
+
+app.get('/json', (req, res) => {
+  res.json({"message": "Hello json"});
+});
 
 
 
@@ -36,4 +45,4 @@ let app = express();
 
 
 
- module.exports = app;
+module.exports = app;
